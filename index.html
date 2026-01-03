@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Dinheiro Vivo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #00c6ff, #0072ff);
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 32px;
+    }
+
+    .box {
+      background: rgba(0,0,0,0.3);
+      margin: 20px;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    button {
+      background: #ffcc00;
+      border: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    button:hover {
+      background: #ffaa00;
+    }
+
+    .coins {
+      font-size: 22px;
+      margin-top: 10px;
+    }
+
+    footer {
+      font-size: 12px;
+      margin: 20px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>💰 Dinheiro Vivo</h1>
+<p>Joga, ganha moedas e diverte-te</p>
+
+<div class="box">
+  <h2>🎮 Jogo</h2>
+  <p>Clica para ganhar moedas</p>
+  <button onclick="ganhar()">Jogar</button>
+  <div class="coins">Moedas: <span id="moedas">0</span></div>
+</div>
+
+<div class="box">
+  <h2>📢 Bónus</h2>
+  <p>Vê um anúncio e dobra as moedas</p>
+  <button onclick="verAnuncio()">Ver anúncio</button>
+</div>
+
+<footer>
+  Este jogo não oferece dinheiro real. As recompensas são virtuais.
+</footer>
+
+<!-- 🔊 Música simples -->
+<audio id="musica" loop autoplay>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🔴 ANÚNCIO MONETAG (SUBSTITUI PELO TEU SCRIPT REAL) -->
+<script>
+  // simulação do anúncio
+  function mostrarAnuncioReal() {
+    window.open("https://monetag.com", "_blank");
+  }
+</script>
+
+<script>
+  let moedas = 0;
+
+  function ganhar() {
+    moedas += Math.floor(Math.random() * 10) + 1;
+    document.getElementById("moedas").innerText = moedas;
+  }
+
+  function verAnuncio() {
+    mostrarAnuncioReal();
+    moedas = moedas * 2;
+    document.getElementById("moedas").innerText = moedas;
+    alert("🎉 Moedas dobradas!");
+  }
+</script>
+
+</body>
+</html>
